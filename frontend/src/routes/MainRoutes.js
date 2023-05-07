@@ -7,7 +7,9 @@ import SignUp from "../pages/SignUp";
 import SignIn from "../pages/SignIn";
 import Stories from "../pages/StoryPage";
 import AddStory from "../pages/AddStory"; 
-
+import MyPosts from "../pages/MyPosts";
+import EditPost from "../pages/EditPost";
+import EditStory from "../pages/EditStory";
 
 
 const MainRoutes = 
@@ -32,7 +34,20 @@ const MainRoutes =
       {
         path: "/Home/AddStory",
         element: <AddStory/>
+      },
+      {
+        path: "/Home/EditStory",
+        element: <EditStory/>
+      },
+      {
+        path: "/Home/MyPosts",
+        element: <MyPosts/>
+      },
+      {
+        path: "/Home/EditPost",
+        element: <EditPost/>
       }
+
     ]},
 
      {   

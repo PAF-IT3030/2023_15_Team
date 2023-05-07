@@ -1,5 +1,4 @@
 import React from "react";
-import insta_log from "../images/logoinsta.png"
 import home from "../images/home.svg";
 import message from "../images/message.svg";
 import find from "../images/find.svg";
@@ -24,7 +23,8 @@ function NavBar(){
         <>
                 <div className="navbar__barContent">
 
-                    <Grid container sx={{position:"fixed" }}>
+                    <Grid container >
+                        <div  className="container">
                         <Grid item xs={2}>
                             <Link to="/Home" sr>
                                 <img  src={foodies_logo} width="110px" />  
@@ -43,7 +43,7 @@ function NavBar(){
                             <Link to="/Home/Stories">
                                 <img  src={stories} width="60px" style={{marginTop:"10px"}}/>  
                             </Link>
-                            <Link to="#">
+                            <Link to="/Home/MyPosts">
                                 <img  src={posts} width="55px" style={{marginTop:"10px"}}/>  
                             </Link>
                             <Link to="/Home/Profile">
@@ -52,7 +52,7 @@ function NavBar(){
                             </Link>
 
                         </Grid>
-
+                        </div>
                     </Grid>
                   
                 </div>

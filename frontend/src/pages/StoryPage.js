@@ -77,6 +77,10 @@ import axios from 'axios';
         navigate('/Home/AddStory')
   
       };
+      const handleUpdate = async () => {
+        navigate('/Home/EditStory')
+  
+      };
 
     const handleDelete = async () => {
         const sid = 2
@@ -112,7 +116,8 @@ import axios from 'axios';
                             </div>
                             <div className='description'>
                                 <Typography sx={{fontSize:13}}>{item.caption}</Typography>
-                                <Button variant="contained" sx={{backgroundColor:"red"}} onClick={handleDelete}>Delete</Button>
+                                <Button variant="contained" sx={{backgroundColor:"red",marginRight:3}} onClick={handleDelete}>Delete</Button>
+                                <Button variant="contained" sx={{backgroundColor:"orange"}} onClick={handleUpdate}>Edit</Button>
                             </div>
                             
                         </div>
