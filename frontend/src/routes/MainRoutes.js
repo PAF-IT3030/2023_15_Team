@@ -5,6 +5,8 @@ import MainLayout from "../layouts/MainLayout";
 import Profile from "../pages/Profile";
 import SignUp from "../pages/SignUp";
 import SignIn from "../pages/SignIn";
+import Stories from "../pages/StoryPage";
+import AddStory from "../pages/AddStory"; 
 
 
 
@@ -22,8 +24,15 @@ const MainRoutes =
       {
         path: "/Home/Profile",
         element: <Profile/>
+      },
+      {
+        path: "/Home/Stories",
+        element: <Stories/>
+      },
+      {
+        path: "/Home/AddStory",
+        element: <AddStory/>
       }
-
     ]},
 
      {   
