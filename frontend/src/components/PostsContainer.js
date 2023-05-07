@@ -6,13 +6,8 @@ function PostsContainer(){
     const [postArray,setPosts] = useState([]);
    
 
-    const getPost = () => { //API
-        // fetch('http://localhost:8080/post')
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         setPosts(data);
-        // });
-        // For now, I'm just using a static data array for testing purposes
+    const getPost = () => { 
+
         let data=[
             {
                 "postId":"123456",
@@ -59,7 +54,6 @@ function PostsContainer(){
 
     return ( 
         <div >
-            {/* <div className="upload_text">{this.state.progressBar}</div> */}
             { postArray && postArray.map((item,index)=>( <Post postDetails={item} /> ))}
         </div>
     );

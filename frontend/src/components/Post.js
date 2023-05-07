@@ -1,6 +1,6 @@
 import React from "react";
 import "./Post.css";
-import { Avatar, Typography } from "@mui/material";
+import { Avatar, Link, Typography } from "@mui/material";
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 
@@ -29,8 +29,10 @@ return(
            
       </div>
       <div style={{"marginLeft":"400px",display:"flex",marginTop:15}}>
+      <Link href="/Home/CommentList">
         <ChatBubbleOutlineIcon/>
         <Typography sx={{marginLeft: "15px"}}>68</Typography>
+      </Link>
       </div>
 
   </div>
