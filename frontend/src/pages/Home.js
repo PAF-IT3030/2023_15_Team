@@ -1,7 +1,6 @@
 import { Grid } from "@mui/material";
 import React from "react";
-// import PostsContainer from "../components/PostsContainer";
-
+import PostsContainer from "../components/PostsContainer";
 
 
 function Home(){
@@ -13,7 +12,7 @@ return(
         <Grid item xs={6} className="maincontent__container">
             <div>
             <div>
-                <h1>home</h1>
+                <PostsContainer/>
             </div>
             </div>
         </Grid>

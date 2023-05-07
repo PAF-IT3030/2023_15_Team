@@ -1,38 +1,62 @@
 import React, { useState } from "react";
 import "./AddStory.css";
 import { useNavigate } from 'react-router-dom';
+import MuiAlert from '@mui/material/Alert';
+import axios from 'axios';
+import { Snackbar } from "@mui/material";
 
-function AddStory(){
+function EditStory(){
 
 const navigate = useNavigate();
+const [SID,setStoryID]= useState(100);
+const [story,setStories]=useState();
 const[name,setName] = useState();
 const[caption,setCaption] = useState();
 const[imageURL,setImageURL] = useState();
 
-const handleSubmit = async(event) =>{
-    event.preventDefault();
-    const story = ({
-        username:name,
+const [notify, setnotify] = useState(false);
+const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
+const handleSubmit= (event) =>{
+    const story ={
+        name:name,
         caption:caption,
-        imgurl:imageURL
-    })
-    
-    // console.log("story",story)
+        imageurl:imageURL
+    }
+    const url = `https://localhost:8080/stor/update/${SID}`;
+    return axios.put(url, story)
+      .then(response => {
+        setStories(response.data);
+        setnotify(true)
+        navigate('/Home/Stories')
 
-      fetch("http://localhost:8080/story/add",{
-        method:"POST",
-        headers:{"Content-Type":"application/json"},
-        body:JSON.stringify(story)
+        return response.data;
 
-    }).then(()=>{
-      console.log("New story created")
-      navigate('/Home/Stories')
-    })
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  
 }
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+        return;
+        }
+
+        setnotify(false);
+    }; 
 
 return(
     <>
-    <h1 >Create a Story</h1>
+    <Snackbar open={notify} autoHideDuration={2500} onClose={handleClose}>
+    <Alert severity="success" onClose={handleClose} sx={{ width: '100%' }}>
+        The Story was Successfully Updated !
+        </Alert>
+     </Snackbar>
+    <h1 >Edit your Story</h1>
     <div className="form-container">
         <form onSubmit={handleSubmit}>
             <label>
@@ -73,4 +97,4 @@ return(
 
 }
 
-export default AddStory;
+export default EditStory;
