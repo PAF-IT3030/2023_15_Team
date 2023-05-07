@@ -10,6 +10,7 @@ import AddStory from "../pages/AddStory";
 import MyPosts from "../pages/MyPosts";
 import EditPost from "../pages/EditPost";
 import EditStory from "../pages/EditStory";
+import CommentList from "../pages/CommentsList";
 
 
 const MainRoutes = 
@@ -46,6 +47,10 @@ const MainRoutes =
       {
         path: "/Home/EditPost",
         element: <EditPost/>
+      },
+      {
+        path: "/Home/CommentList",
+        element: <CommentList/>
       }
 
     ]},
